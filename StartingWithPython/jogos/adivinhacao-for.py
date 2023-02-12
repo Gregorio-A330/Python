@@ -9,10 +9,14 @@ total_de_tentativas = 3
 for rodada in range(1, total_de_tentativas + 1):
     print("Tentativa {} de {}".format(rodada, total_de_tentativas)) # string interpolation
     
-    chute_str = input("Digite o seu numero: ")
+    chute_str = input("Digite um número entre 1 e 100: ")
     chute = int(chute_str)
 
     print("você digitou ", chute_str, type(chute_str)) ## input retorna a entrada como string e é necessário converter
+
+    if(chute < 1 or chute > 100):
+        print("você deve digitar um número entre 1 e 100!")
+        continue #retorna pro inicio do for
 
     acertou = chute == numero_secreto
     maior = chute > numero_secreto
@@ -30,22 +34,3 @@ for rodada in range(1, total_de_tentativas + 1):
 
 
 print("Fim de jogo...")
-
-
-# Diferenças entre python 2 e python 3 para >>>>> print e input()
-#  não tinha obrigatoriedade de parenteses no python 2 e o print do 3 aceita mais parametros como o sep="" e o end=""
-#  não converte diretamente o input no python 3 porque no python 2 era considerado má pratica
-
-# raw_input só exite no python 2 e trazia a entrada diretamente sem conversão não existe no python 3
-
-
-# elif -> else if()
-
-
-    #  for VARIAVEL in range(inicio, final, steps?):
-    #   ou for VARIAVEL in [1,2,3,4,5] 
-    #  o valor final não faz parte é exclusivoo
-
-
-# for rodada in range(1,10):
-#     print(rodada)
